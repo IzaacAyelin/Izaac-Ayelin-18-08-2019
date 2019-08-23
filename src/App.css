@@ -25,6 +25,11 @@
   cursor: pointer;
 }
 
+@media screen and (min-width:1001px){
+  .overflow-y-hidden{
+    overflow-y: auto;
+  }
+}
 @media screen and (max-width:1000px){
   .wrapper{
     display: flex;
@@ -39,5 +44,6 @@
   .navbar-toggle{
     display: block;
   }
+
 }
 

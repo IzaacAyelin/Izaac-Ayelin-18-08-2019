@@ -26,15 +26,12 @@ function App(props) {
     }
   }
   const toggleNightMode = () => {
-    console.log('as');
     
       if (!props.nightMode) {
-        window.document.body.classList.remove('day-mode');
         window.document.body.classList.add('night-mode');
       }
       else{
         window.document.body.classList.remove('night-mode');
-        window.document.body.classList.add('day-mode');
       }
       props.changeNightMode()
   }

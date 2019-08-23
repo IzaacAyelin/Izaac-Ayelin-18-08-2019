@@ -5,7 +5,7 @@ const initialState = {
     suggestions: [],
     cityName: '',
     loading: true,
-    favorites: [],
+    favorites: JSON.parse(localStorage.getItem('favorite-cities')) ? JSON.parse(localStorage.getItem('favorite-cities')): [],
     error: null,
     imperialUnitsMode: true,
     nightMode: false,
@@ -59,12 +59,14 @@ const mainReducer = (state = initialState, action) => {
             }
         case 'ADD_TO_FAVORITES':
             newState.favorites.push(action.data)
+            localStorage.setItem('favorite-cities',JSON.stringify(newState.favorites));
             return {
                 ...newState
             }
         case 'REMOVE_FROM_FAVORITES':
             let index = newState.favorites.findIndex(city => city.cityKey === action.data)
             newState.favorites.splice(index, 1);
+            localStorage.setItem('favorite-cities',JSON.stringify(newState.favorites));
             return {
                 ...newState
             }

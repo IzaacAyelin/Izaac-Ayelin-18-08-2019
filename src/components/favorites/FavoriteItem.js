@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
-import { removeFromFavorites, changeUnitsMode } from '../../store/actions/actions';
-import { getCurrentConditionsApi } from '../api/acuuweather/acuuweatherActions';
+import { removeFromFavorites, changeUnitsMode,getError } from '../../store/actions/actions';
+import { getCurrentConditionsApi, } from '../api/acuuweather/acuuweatherActions';
 
 
 const FavoriteItem = (props) => {
@@ -29,7 +29,7 @@ const FavoriteItem = (props) => {
                     cityName: props.city.cityName,
                     cityKey: props.city.cityKey
                 })
-            })
+            }).catch(err=>props.getError(err))
     }, [])
 
     const getTempUnits = () => {
@@ -80,6 +80,7 @@ const mapDispatchToProps = dispatch => {
     return {
         removeFromFavorites: (cityKey) => dispatch(removeFromFavorites(cityKey)),
         changeUnitsMode: () => dispatch(changeUnitsMode()),
+        getError: (err) => dispatch(getError(err)),
     }
 }
 

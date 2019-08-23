@@ -64,7 +64,7 @@
 }
 
 .switch input:checked + label {
-    background-color: #04cdff;
+    background-color: #04cdff!important;
 }
 
 .switch input:checked + label:after {

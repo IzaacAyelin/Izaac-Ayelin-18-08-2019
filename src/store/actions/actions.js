@@ -61,8 +61,6 @@ export const getGeoposition = data => {
             dispatch(dispatchCurrentConditions({ cityKey: positionRes.data.Key, weather: getCurrentRes.data[0] }))
             dispatch(dispatchGetWeather({ weather: { ...fiveDaysRes.data, cityKey: positionRes.data.Key }, cityName: positionRes.data.LocalizedName }))
         } catch (error) {
-            console.log('error',error);
-            
             dispatch(dispatchError('Error'))
         }
     }
@@ -97,6 +95,11 @@ const loading = () => {
 //ERROR
 const dispatchError = (data) => {
     return { type: 'ERROR', data: data }
+}
+export const getError = data => {
+    return dispatch => {
+        dispatch(dispatchError(data));
+    }
 }
 
 //UNITS

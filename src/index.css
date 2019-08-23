@@ -10,6 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./images/clouds.jpg');
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
   overflow-x: hidden;
@@ -17,9 +18,6 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
-.day-mode{
-  background-image: url('./images/clouds.jpg');
-}
 .night-mode{
   background-image: url('./images/night.jpg');
 }
@@ -61,3 +59,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+

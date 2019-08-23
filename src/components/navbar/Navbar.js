@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { changeUnitsMode } from '../../store/actions/actions';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
